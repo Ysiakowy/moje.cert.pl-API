@@ -1,0 +1,3004 @@
+{
+	"info": {
+		"_postman_id": "fd654771-4f5c-48dd-8b3c-77a66a62f29b",
+		"name": "moje.cert.pl API Copy",
+		"description": "API for managing assets in moje.cert.pl service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10509870"
+	},
+	"item": [
+		{
+			"name": "myself",
+			"item": [
+				{
+					"name": "myself retrieve",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{HTTP_HOST}}/api/v1/myself/",
+							"host": [
+								"{{HTTP_HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"myself",
+								""
+							]
+						},
+						"description": "Retrieve your token details"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/myself/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"myself",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"partnership\": \"<string>\",\n  \"user\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "organizations",
+			"item": [
+				{
+					"name": "organizations list all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{HTTP_HOST}}/api/v1/organizations/",
+							"host": [
+								"{{HTTP_HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations",
+								""
+							]
+						},
+						"description": "Retrieve list of organizations assigned to your account"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/?page=<integer>&name=<string>&exact_name=<string>&domain=<string>&email=<string>",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "<integer>",
+											"description": "A page number within the paginated result set."
+										},
+										{
+											"key": "name",
+											"value": "<string>",
+											"description": "Filter organizations by part of their name"
+										},
+										{
+											"key": "exact_name",
+											"value": "<string>",
+											"description": "Filter organizations by their full name"
+										},
+										{
+											"key": "domain",
+											"value": "<string>",
+											"description": "Filter organizations by domain names"
+										},
+										{
+											"key": "email",
+											"value": "<string>",
+											"description": "Filter organizations by contact emails. Warning: specifying the `contact_emails` organization setting is possible only for our high-trust Partners that can manage the assets of other entities."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<integer>\",\n  \"results\": [\n    {\n      \"name\": \"<string>\",\n      \"slug\": \"dXdlFN\",\n      \"nip\": \"<string>\",\n      \"regon\": \"<string>\",\n      \"krs\": \"<string>\",\n      \"address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"contact_emails\": [\n        \"<email>\",\n        \"<email>\"\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"slug\": \"R72z_-\",\n      \"nip\": \"<string>\",\n      \"regon\": \"<string>\",\n      \"krs\": \"<string>\",\n      \"address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"contact_emails\": [\n        \"<email>\",\n        \"<email>\"\n      ]\n    }\n  ],\n  \"next\": \"<uri>\",\n  \"previous\": \"<uri>\"\n}"
+						},
+						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/?page=<integer>&name=<string>&exact_name=<string>&domain=<string>&email=<string>",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "<integer>",
+											"description": "A page number within the paginated result set."
+										},
+										{
+											"key": "name",
+											"value": "<string>",
+											"description": "Filter organizations by part of their name"
+										},
+										{
+											"key": "exact_name",
+											"value": "<string>",
+											"description": "Filter organizations by their full name"
+										},
+										{
+											"key": "domain",
+											"value": "<string>",
+											"description": "Filter organizations by domain names"
+										},
+										{
+											"key": "email",
+											"value": "<string>",
+											"description": "Filter organizations by contact emails. Warning: specifying the `contact_emails` organization setting is possible only for our high-trust Partners that can manage the assets of other entities."
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "organizations list search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{HTTP_HOST}}/api/v1/organizations/?page=<integer>&name=<string>&exact_name=<string>&domain=<string>&email=<string>",
+							"host": [
+								"{{HTTP_HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "<integer>",
+									"description": "A page number within the paginated result set."
+								},
+								{
+									"key": "name",
+									"value": "<string>",
+									"description": "Filter organizations by part of their name"
+								},
+								{
+									"key": "exact_name",
+									"value": "<string>",
+									"description": "Filter organizations by their full name"
+								},
+								{
+									"key": "domain",
+									"value": "<string>",
+									"description": "Filter organizations by domain names"
+								},
+								{
+									"key": "email",
+									"value": "<string>",
+									"description": "Filter organizations by contact emails. Warning: specifying the `contact_emails` organization setting is possible only for our high-trust Partners that can manage the assets of other entities."
+								}
+							]
+						},
+						"description": "Retrieve list of organizations assigned to your account"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/?page=<integer>&name=<string>&exact_name=<string>&domain=<string>&email=<string>",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "<integer>",
+											"description": "A page number within the paginated result set."
+										},
+										{
+											"key": "name",
+											"value": "<string>",
+											"description": "Filter organizations by part of their name"
+										},
+										{
+											"key": "exact_name",
+											"value": "<string>",
+											"description": "Filter organizations by their full name"
+										},
+										{
+											"key": "domain",
+											"value": "<string>",
+											"description": "Filter organizations by domain names"
+										},
+										{
+											"key": "email",
+											"value": "<string>",
+											"description": "Filter organizations by contact emails. Warning: specifying the `contact_emails` organization setting is possible only for our high-trust Partners that can manage the assets of other entities."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<integer>\",\n  \"results\": [\n    {\n      \"name\": \"<string>\",\n      \"slug\": \"dXdlFN\",\n      \"nip\": \"<string>\",\n      \"regon\": \"<string>\",\n      \"krs\": \"<string>\",\n      \"address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"contact_emails\": [\n        \"<email>\",\n        \"<email>\"\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"slug\": \"R72z_-\",\n      \"nip\": \"<string>\",\n      \"regon\": \"<string>\",\n      \"krs\": \"<string>\",\n      \"address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"contact_emails\": [\n        \"<email>\",\n        \"<email>\"\n      ]\n    }\n  ],\n  \"next\": \"<uri>\",\n  \"previous\": \"<uri>\"\n}"
+						},
+						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/?page=<integer>&name=<string>&exact_name=<string>&domain=<string>&email=<string>",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "<integer>",
+											"description": "A page number within the paginated result set."
+										},
+										{
+											"key": "name",
+											"value": "<string>",
+											"description": "Filter organizations by part of their name"
+										},
+										{
+											"key": "exact_name",
+											"value": "<string>",
+											"description": "Filter organizations by their full name"
+										},
+										{
+											"key": "domain",
+											"value": "<string>",
+											"description": "Filter organizations by domain names"
+										},
+										{
+											"key": "email",
+											"value": "<string>",
+											"description": "Filter organizations by contact emails. Warning: specifying the `contact_emails` organization setting is possible only for our high-trust Partners that can manage the assets of other entities."
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "organizations create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"nip\": \"<string>\",\n  \"regon\": \"<string>\",\n  \"krs\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"contact_emails\": [\n    \"<email>\",\n    \"<email>\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HTTP_HOST}}/api/v1/organizations/",
+							"host": [
+								"{{HTTP_HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations",
+								""
+							]
+						},
+						"description": "Create new organization and assign it to your account"
+					},
+					"response": [
+						{
+							"name": "201 Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"nip\": \"<string>\",\n  \"regon\": \"<string>\",\n  \"krs\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"contact_emails\": [\n    \"<email>\",\n    \"<email>\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"name\": \"<string>\",\n  \"slug\": \"5Rt\",\n  \"nip\": \"<string>\",\n  \"regon\": \"<string>\",\n  \"krs\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"contact_emails\": [\n    \"<email>\",\n    \"<email>\"\n  ]\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"nip\": \"<string>\",\n  \"regon\": \"<string>\",\n  \"krs\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"contact_emails\": [\n    \"<email>\",\n    \"<email>\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "organizations retrieve",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/",
+							"host": [
+								"{{HTTP_HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations",
+								"{{ORG_SLUG}}",
+								""
+							],
+							"variable": [
+								{
+									"key": "org_slug",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Retrieve detailed info on given organization"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"domains\": [\n    {\n      \"creation_time\": \"<dateTime>\",\n      \"domain_name\": \"<string>\",\n      \"last_scan\": {\n        \"in0\": {},\n        \"et252\": {},\n        \"aliquip7\": {}\n      },\n      \"leak_data\": {\n        \"et6\": {}\n      },\n      \"scan\": \"<boolean>\",\n      \"scan_settings\": {}\n    },\n    {\n      \"creation_time\": \"<dateTime>\",\n      \"domain_name\": \"<string>\",\n      \"last_scan\": {\n        \"dolor25\": {}\n      },\n      \"leak_data\": {\n        \"consectetur_5f\": {},\n        \"in1e\": {}\n      },\n      \"scan\": \"<boolean>\",\n      \"scan_settings\": {}\n    }\n  ],\n  \"name\": \"<string>\",\n  \"slug\": \"IHcu-0gD\",\n  \"nip\": \"<string>\",\n  \"regon\": \"<string>\",\n  \"krs\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"contact_emails\": [\n    \"<email>\",\n    \"<email>\"\n  ]\n}"
+						},
+						{
+							"name": "403 Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<string>\"\n}"
+						},
+						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "organizations partial update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"nip\": \"<string>\",\n  \"regon\": \"<string>\",\n  \"krs\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"contact_emails\": [\n    \"<email>\",\n    \"<email>\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/",
+							"host": [
+								"{{HTTP_HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations",
+								"{{ORG_SLUG}}",
+								""
+							],
+							"variable": [
+								{
+									"key": "org_slug",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Partially update information about given organization"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"nip\": \"<string>\",\n  \"regon\": \"<string>\",\n  \"krs\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"contact_emails\": [\n    \"<email>\",\n    \"<email>\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"name\": \"<string>\",\n  \"slug\": \"5Rt\",\n  \"nip\": \"<string>\",\n  \"regon\": \"<string>\",\n  \"krs\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"contact_emails\": [\n    \"<email>\",\n    \"<email>\"\n  ]\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"nip\": \"<string>\",\n  \"regon\": \"<string>\",\n  \"krs\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"contact_emails\": [\n    \"<email>\",\n    \"<email>\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<string>\"\n}"
+						},
+						{
+							"name": "403 Forbidden",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"nip\": \"<string>\",\n  \"regon\": \"<string>\",\n  \"krs\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"contact_emails\": [\n    \"<email>\",\n    \"<email>\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "organizations update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"nip\": \"<string>\",\n  \"regon\": \"<string>\",\n  \"krs\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"contact_emails\": [\n    \"<email>\",\n    \"<email>\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/",
+							"host": [
+								"{{HTTP_HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations",
+								"{{ORG_SLUG}}",
+								""
+							],
+							"variable": [
+								{
+									"key": "org_slug",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Update information about given organization"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"nip\": \"<string>\",\n  \"regon\": \"<string>\",\n  \"krs\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"contact_emails\": [\n    \"<email>\",\n    \"<email>\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"name\": \"<string>\",\n  \"slug\": \"5Rt\",\n  \"nip\": \"<string>\",\n  \"regon\": \"<string>\",\n  \"krs\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"contact_emails\": [\n    \"<email>\",\n    \"<email>\"\n  ]\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"nip\": \"<string>\",\n  \"regon\": \"<string>\",\n  \"krs\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"contact_emails\": [\n    \"<email>\",\n    \"<email>\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<string>\"\n}"
+						},
+						{
+							"name": "403 Forbidden",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"nip\": \"<string>\",\n  \"regon\": \"<string>\",\n  \"krs\": \"<string>\",\n  \"address\": \"<string>\",\n  \"city\": \"<string>\",\n  \"postal_code\": \"<string>\",\n  \"contact_emails\": [\n    \"<email>\",\n    \"<email>\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "organizations destroy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/",
+							"host": [
+								"{{HTTP_HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations",
+								"{{ORG_SLUG}}",
+								""
+							],
+							"variable": [
+								{
+									"key": "org_slug",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Delete given organization"
+					},
+					"response": [
+						{
+							"name": "204 No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "403 Forbidden",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "organizations domains create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"domain_name\": \"<string>\",\n  \"scan\": \"<boolean>\",\n  \"scan_settings\": {\n    \"time_between_scans\": 120,\n    \"requests_per_second\": 1\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/",
+							"host": [
+								"{{HTTP_HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations",
+								"{{ORG_SLUG}}",
+								"domains",
+								""
+							],
+							"variable": [
+								{
+									"key": "org_slug",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Create new domain and assign it to given organization"
+					},
+					"response": [
+						{
+							"name": "201 Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"domain_name\": \"<string>\",\n  \"scan\": \"<boolean>\",\n  \"scan_settings\": {\n    \"time_between_scans\": 120,\n    \"requests_per_second\": 1\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										"domains",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"domain_name\": \"<string>\",\n  \"scan\": \"<boolean>\",\n  \"scan_settings\": {\n    \"time_between_scans\": 120,\n    \"requests_per_second\": 1\n  }\n}"
+						},
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"domain_name\": \"<string>\",\n  \"scan\": \"<boolean>\",\n  \"scan_settings\": {\n    \"time_between_scans\": 120,\n    \"requests_per_second\": 1\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										"domains",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<string>\"\n}"
+						},
+						{
+							"name": "403 Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"domain_name\": \"<string>\",\n  \"scan\": \"<boolean>\",\n  \"scan_settings\": {\n    \"time_between_scans\": 120,\n    \"requests_per_second\": 1\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										"domains",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "organizations domains retrieve",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/",
+							"host": [
+								"{{HTTP_HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations",
+								"{{ORG_SLUG}}",
+								"domains",
+								"{{DOMAIN_NAME}}",
+								""
+							],
+							"variable": [
+								{
+									"key": "org_slug",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "domain_name",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Retrieve detailed info on given domain assigned to given organization"
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										"domains",
+										"{{DOMAIN_NAME}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										},
+										{
+											"key": "domain_name"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"domain_name\": \"<string>\",\n  \"scan\": \"<boolean>\",\n  \"scan_settings\": {\n    \"time_between_scans\": 120,\n    \"requests_per_second\": 1\n  }\n}"
+						},
+						{
+							"name": "403 Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										"domains",
+										"{{DOMAIN_NAME}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										},
+										{
+											"key": "domain_name"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<string>\"\n}"
+						},
+						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										"domains",
+										"{{DOMAIN_NAME}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										},
+										{
+											"key": "domain_name"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "organizations domains destroy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/",
+							"host": [
+								"{{HTTP_HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations",
+								"{{ORG_SLUG}}",
+								"domains",
+								"{{DOMAIN_NAME}}",
+								""
+							],
+							"variable": [
+								{
+									"key": "org_slug",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "domain_name",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Delete given domain from given organization"
+					},
+					"response": [
+						{
+							"name": "204 No Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										"domains",
+										"{{DOMAIN_NAME}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										},
+										{
+											"key": "domain_name"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "403 Forbidden",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										"domains",
+										"{{DOMAIN_NAME}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										},
+										{
+											"key": "domain_name"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<string>\"\n}"
+						},
+						{
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										"domains",
+										"{{DOMAIN_NAME}}",
+										""
+									],
+									"variable": [
+										{
+											"key": "org_slug"
+										},
+										{
+											"key": "domain_name"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "domains",
+			"item": [
+				{
+					"name": "leaks",
+					"item": [
+						{
+							"name": "organizations domains leaks retrieve",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/leaks/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										"domains",
+										"{{DOMAIN_NAME}}",
+										"leaks",
+										""
+									]
+								},
+								"description": "Retrieve password leaks"
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/leaks/?page=<integer>",
+											"host": [
+												"{{HTTP_HOST}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"organizations",
+												"{{ORG_SLUG}}",
+												"domains",
+												"{{DOMAIN_NAME}}",
+												"leaks",
+												""
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "<integer>",
+													"description": "Page number for result pagination"
+												}
+											],
+											"variable": [
+												{
+													"key": "org_slug"
+												},
+												{
+													"key": "domain_name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"results\": [\n    {\n      \"identifier\": \"<string>\",\n      \"leak_date\": \"<string>\",\n      \"leak_description\": \"<string>\",\n      \"password_prefix\": \"<string>\",\n      \"password_url\": \"<string>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"leak_date\": \"<string>\",\n      \"leak_description\": \"<string>\",\n      \"password_prefix\": \"<string>\",\n      \"password_url\": \"<string>\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/leaks/?page=<integer>",
+											"host": [
+												"{{HTTP_HOST}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"organizations",
+												"{{ORG_SLUG}}",
+												"domains",
+												"{{DOMAIN_NAME}}",
+												"leaks",
+												""
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "<integer>",
+													"description": "Page number for result pagination"
+												}
+											],
+											"variable": [
+												{
+													"key": "org_slug"
+												},
+												{
+													"key": "domain_name"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": \"<string>\"\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/leaks/?page=<integer>",
+											"host": [
+												"{{HTTP_HOST}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"organizations",
+												"{{ORG_SLUG}}",
+												"domains",
+												"{{DOMAIN_NAME}}",
+												"leaks",
+												""
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "<integer>",
+													"description": "Page number for result pagination"
+												}
+											],
+											"variable": [
+												{
+													"key": "org_slug"
+												},
+												{
+													"key": "domain_name"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": \"<string>\"\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/leaks/?page=<integer>",
+											"host": [
+												"{{HTTP_HOST}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"organizations",
+												"{{ORG_SLUG}}",
+												"domains",
+												"{{DOMAIN_NAME}}",
+												"leaks",
+												""
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "<integer>",
+													"description": "Page number for result pagination"
+												}
+											],
+											"variable": [
+												{
+													"key": "org_slug"
+												},
+												{
+													"key": "domain_name"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "organizations domains leaks retrieve by page",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/leaks/?page=<integer>",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										"domains",
+										"{{DOMAIN_NAME}}",
+										"leaks",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "<integer>",
+											"description": "Page number for result pagination"
+										}
+									]
+								},
+								"description": "Retrieve password leaks"
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/leaks/?page=<integer>",
+											"host": [
+												"{{HTTP_HOST}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"organizations",
+												"{{ORG_SLUG}}",
+												"domains",
+												"{{DOMAIN_NAME}}",
+												"leaks",
+												""
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "<integer>",
+													"description": "Page number for result pagination"
+												}
+											],
+											"variable": [
+												{
+													"key": "org_slug"
+												},
+												{
+													"key": "domain_name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"results\": [\n    {\n      \"identifier\": \"<string>\",\n      \"leak_date\": \"<string>\",\n      \"leak_description\": \"<string>\",\n      \"password_prefix\": \"<string>\",\n      \"password_url\": \"<string>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"leak_date\": \"<string>\",\n      \"leak_description\": \"<string>\",\n      \"password_prefix\": \"<string>\",\n      \"password_url\": \"<string>\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/leaks/?page=<integer>",
+											"host": [
+												"{{HTTP_HOST}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"organizations",
+												"{{ORG_SLUG}}",
+												"domains",
+												"{{DOMAIN_NAME}}",
+												"leaks",
+												""
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "<integer>",
+													"description": "Page number for result pagination"
+												}
+											],
+											"variable": [
+												{
+													"key": "org_slug"
+												},
+												{
+													"key": "domain_name"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": \"<string>\"\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/leaks/?page=<integer>",
+											"host": [
+												"{{HTTP_HOST}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"organizations",
+												"{{ORG_SLUG}}",
+												"domains",
+												"{{DOMAIN_NAME}}",
+												"leaks",
+												""
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "<integer>",
+													"description": "Page number for result pagination"
+												}
+											],
+											"variable": [
+												{
+													"key": "org_slug"
+												},
+												{
+													"key": "domain_name"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": \"<string>\"\n}"
+								},
+								{
+									"name": "500 Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/leaks/?page=<integer>",
+											"host": [
+												"{{HTTP_HOST}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"organizations",
+												"{{ORG_SLUG}}",
+												"domains",
+												"{{DOMAIN_NAME}}",
+												"leaks",
+												""
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "<integer>",
+													"description": "Page number for result pagination"
+												}
+											],
+											"variable": [
+												{
+													"key": "org_slug"
+												},
+												{
+													"key": "domain_name"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "results",
+					"item": [
+						{
+							"name": "organizations domains results list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/results/",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										"domains",
+										"{{DOMAIN_NAME}}",
+										"results",
+										""
+									]
+								},
+								"description": "Retrieve detailed info on scan of given domain"
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/results/?page=<integer>",
+											"host": [
+												"{{HTTP_HOST}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"organizations",
+												"{{ORG_SLUG}}",
+												"domains",
+												"{{DOMAIN_NAME}}",
+												"results",
+												""
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "<integer>",
+													"description": "A page number within the paginated result set."
+												}
+											],
+											"variable": [
+												{
+													"key": "org_slug"
+												},
+												{
+													"key": "domain_name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<integer>\",\n  \"results\": [\n    {\n      \"additional_data\": {\n        \"curl_command\": \"<string>\",\n        \"description_translated\": \"<string>\",\n        \"reference\": \"<string>\"\n      },\n      \"last_domain\": \"<string>\",\n      \"report_type\": \"<string>\",\n      \"severity\": \"medium\",\n      \"target\": \"<string>\",\n      \"target_ip\": \"<string>\",\n      \"timestamp\": \"<dateTime>\"\n    },\n    {\n      \"additional_data\": {\n        \"curl_command\": \"<string>\",\n        \"description_translated\": \"<string>\",\n        \"reference\": \"<string>\"\n      },\n      \"last_domain\": \"<string>\",\n      \"report_type\": \"<string>\",\n      \"severity\": \"medium\",\n      \"target\": \"<string>\",\n      \"target_ip\": \"<string>\",\n      \"timestamp\": \"<dateTime>\"\n    }\n  ],\n  \"next\": \"<uri>\",\n  \"previous\": \"<uri>\"\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/results/?page=<integer>",
+											"host": [
+												"{{HTTP_HOST}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"organizations",
+												"{{ORG_SLUG}}",
+												"domains",
+												"{{DOMAIN_NAME}}",
+												"results",
+												""
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "<integer>",
+													"description": "A page number within the paginated result set."
+												}
+											],
+											"variable": [
+												{
+													"key": "org_slug"
+												},
+												{
+													"key": "domain_name"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"detail\": \"<string>\"\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/results/?page=<integer>",
+											"host": [
+												"{{HTTP_HOST}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"organizations",
+												"{{ORG_SLUG}}",
+												"domains",
+												"{{DOMAIN_NAME}}",
+												"results",
+												""
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "<integer>",
+													"description": "A page number within the paginated result set."
+												}
+											],
+											"variable": [
+												{
+													"key": "org_slug"
+												},
+												{
+													"key": "domain_name"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"detail\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "organizations domains results list by page",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/results/?page=<integer>",
+									"host": [
+										"{{HTTP_HOST}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"organizations",
+										"{{ORG_SLUG}}",
+										"domains",
+										"{{DOMAIN_NAME}}",
+										"results",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "<integer>",
+											"description": "A page number within the paginated result set."
+										}
+									],
+									"variable": [
+										{
+											"key": "org_slug",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "domain_name",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "Retrieve detailed info on scan of given domain"
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/results/?page=<integer>",
+											"host": [
+												"{{HTTP_HOST}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"organizations",
+												"{{ORG_SLUG}}",
+												"domains",
+												"{{DOMAIN_NAME}}",
+												"results",
+												""
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "<integer>",
+													"description": "A page number within the paginated result set."
+												}
+											],
+											"variable": [
+												{
+													"key": "org_slug"
+												},
+												{
+													"key": "domain_name"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<integer>\",\n  \"results\": [\n    {\n      \"additional_data\": {\n        \"curl_command\": \"<string>\",\n        \"description_translated\": \"<string>\",\n        \"reference\": \"<string>\"\n      },\n      \"last_domain\": \"<string>\",\n      \"report_type\": \"<string>\",\n      \"severity\": \"medium\",\n      \"target\": \"<string>\",\n      \"target_ip\": \"<string>\",\n      \"timestamp\": \"<dateTime>\"\n    },\n    {\n      \"additional_data\": {\n        \"curl_command\": \"<string>\",\n        \"description_translated\": \"<string>\",\n        \"reference\": \"<string>\"\n      },\n      \"last_domain\": \"<string>\",\n      \"report_type\": \"<string>\",\n      \"severity\": \"medium\",\n      \"target\": \"<string>\",\n      \"target_ip\": \"<string>\",\n      \"timestamp\": \"<dateTime>\"\n    }\n  ],\n  \"next\": \"<uri>\",\n  \"previous\": \"<uri>\"\n}"
+								},
+								{
+									"name": "403 Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/results/?page=<integer>",
+											"host": [
+												"{{HTTP_HOST}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"organizations",
+												"{{ORG_SLUG}}",
+												"domains",
+												"{{DOMAIN_NAME}}",
+												"results",
+												""
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "<integer>",
+													"description": "A page number within the paginated result set."
+												}
+											],
+											"variable": [
+												{
+													"key": "org_slug"
+												},
+												{
+													"key": "domain_name"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"detail\": \"<string>\"\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{HTTP_HOST}}/api/v1/organizations/{{ORG_SLUG}}/domains/{{DOMAIN_NAME}}/results/?page=<integer>",
+											"host": [
+												"{{HTTP_HOST}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"organizations",
+												"{{ORG_SLUG}}",
+												"domains",
+												"{{DOMAIN_NAME}}",
+												"results",
+												""
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "<integer>",
+													"description": "A page number within the paginated result set."
+												}
+											],
+											"variable": [
+												{
+													"key": "org_slug"
+												},
+												{
+													"key": "domain_name"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"detail\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{API_KEY}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HTTP_HOST",
+			"value": "moje.cert.pl"
+		},
+		{
+			"key": "API_KEY",
+			"value": "Token <klucz_API>",
+			"type": "string"
+		},
+		{
+			"key": "ORG_SLUG",
+			"value": "<id_organizacji>",
+			"type": "string"
+		},
+		{
+			"key": "DOMAIN_NAME",
+			"value": "<nazwa_domeny>",
+			"type": "string"
+		}
+	]
+}

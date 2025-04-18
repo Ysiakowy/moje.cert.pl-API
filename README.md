@@ -37,11 +37,16 @@ Kolekcja w wersji 2.1 dla aplikacji Postman z zestawem zapytań co API moje.cert
 ## 🔑 jak uzyskać klucz API
 
 Klucz API jest niepowtarzalny dla każdego kontekstu użytkownika. Jednocześnie kluczy API można utworzyć więcej niż jeden, ale każdy z nich będzie przypisany do Twojego kkontekrtu użytkownika i uprawnień jakie posiadasz. 
+
 Żeby uzyskać klucz API należy zalogować się do portalu, kliknąć "hamburger menu" ☰ w prawym górnym rogu, bezpośrednio za swoim adresem e-mail.
+
 Następnie wybrać [Ustawienia], a w prawym menu [Twoje tokeny API] i postępować zgodnie z instrukcją. 
+
   ![moj cert pl_get_api_key](https://github.com/user-attachments/assets/1e34c03c-d2a5-48fb-82a6-9975f1eca2f0)
 
 Pamiętaj, że wartość zmiennej API_KEY w której znajsuje się klucz musi poprzedzać słowo "Token"
+
+
 
 ## 🆔 jak uzyskać ID organizacji
 
@@ -50,6 +55,7 @@ W celu pobrania ID organizacji, czyli tak organization slug (ORG_SLUG), należy 
 📤 GET {{HTTP_HOST}}/api/v1/organizations/
 
 W odpowiedzi otrzymamy JSON zawierajacy polę slug. wartością będzie nazwa organizacji, pisana z małych liter, zdefiniowana w portalu wraz z losowym sufixem.
+
 Jeśli posiadasz dostęp do wielu organizacji, otrzymasz w wyniku listę wszystkich dostępnych organizacji dla Twojego kontekstu użytkownika. 
 
 ```json
@@ -131,5 +137,7 @@ W wyniku otrzymasz listę wszystkich domen dodanych do organizacji, w raz z pods
 ```
 
 wybraną domenę z pola "domain_name", definjujesz jako wartość zmiennej DOMAIN_NAME
+
+
 
 

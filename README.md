@@ -41,6 +41,8 @@ Klucz API jest niepowtarzalny dla każdego kontekstu użytkownika. Jednocześnie
 Następnie wybrać [Ustawienia], a w prawym menu [Twoje tokeny API] i postępować zgodnie z instrukcją. 
   ![moj cert pl_get_api_key](https://github.com/user-attachments/assets/1e34c03c-d2a5-48fb-82a6-9975f1eca2f0)
 
+Pamiętaj, że wartość zmiennej API_KEY w której znajsuje się klucz musi poprzedzać słowo "Token"
+
 ## 🆔 jak uzyskać ID organizacji
 
 W celu pobrania ID organizacji, czyli tak organization slug (ORG_SLUG), należy wykonać request oznaczony w kolekcji jako GET organization list all:

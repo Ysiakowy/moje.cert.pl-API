@@ -1,5 +1,5 @@
 # moje.cert.pl API Postman Collection
-Kolekcja w wersji 2.1 dla aplikacji Postman z zestawem zapytań co API moje.cert.pl
+Kolekcja w wersji 2.1 dla aplikacji Postman z zestawem zapytań do API moje.cert.pl
 
 ## 📚 Spis treści
 
